@@ -9,6 +9,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import useScrollDirection from '../utils/scrollDirection'
 import { navLinks } from '../config'
 
+import logo from '../img/logo1.png'
+
 const StyledHeader = styled.header`
 	display: flex;
 	justify-content: space-between;
@@ -19,7 +21,7 @@ const StyledHeader = styled.header`
 	padding: 0px 50px;
 	width: 100vw;
 	height: var(--nav-height);
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: var(--pri-back);
 	filter: none !important;
 	pointer-events: auto !important;
 	user-select: auto !important;
@@ -66,6 +68,8 @@ const StyledNav = styled.nav`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		width: 30px;
+		margin-right: 20px;
 		a {
 			color: var(--text);
 
@@ -103,11 +107,12 @@ const StyledLinks = styled.div`
 		padding: 0;
 		margin: 0;
 		list-style: none;
+
 		li {
 			margin: 0 5px;
 			position: relative;
 			font-size: var(--fz-xxs);
-			font-weight: 200;
+			font-weight: 400;
 			a {
 				padding: 30px;
 				&:before {
@@ -157,12 +162,20 @@ const Nav = ({ isHome }) => {
 					{isMounted && (
 						<CSSTransition classNames={fadeClass} timeout={timeout}>
 							{isHome ? (
-								<a href='/' aria-label='home'>
-									<p> LIAM TYRIE | DEVELOPER</p>
-								</a>
+								<img src={logo} alt=' ' className='logo' />
 							) : (
 								<Link to='/' aria-label='home' style={{ display: 'flex' }}>
-									<p>LIAM TYRIE | DEVELOPER</p>
+									<img src={logo} alt=' ' className='logo' />
+									<div
+										style={{
+											marginTop: '5px',
+											letterSpacing: '-0.5px',
+											fontSize: 'var(--fz-md)',
+											fontWeight: 'var(--font-weight)'
+										}}
+									>
+										LIAM TYRIE | SOFTWARE DEVELOPER
+									</div>
 								</Link>
 							)}
 						</CSSTransition>

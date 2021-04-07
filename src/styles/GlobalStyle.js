@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components'
-import { TransitionStyles } from './styles/TransitionStyles'
-import { PrismStyles } from './styles/PrismStyles'
+import TransitionStyles from './TransitionStyles'
+import PrismStyles from './PrismStyles'
 
 const mixins = {
 	flexCenter: css`
@@ -64,8 +64,6 @@ const mixins = {
 			opacity: 0.5;
 		}
 	`,
-
-	button,
 
 	smallButton: css`
 		color: black;
@@ -144,7 +142,8 @@ const GlobalStyle = createGlobalStyle`
     --tri-back: #EAEAEA;
     --text: #333333;
     --text2: #000000;
-    --font-sans: 'Poppins';
+    --font-sans: 'Catamaran', sans-serif;
+    --font-weight: 500;
     --fz-xxs: 12px;
     --fz-xs: 14px;
     --fz-sm: 16px;
