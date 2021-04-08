@@ -138,11 +138,11 @@ const GlobalStyle = createGlobalStyle`
 
 :root {
     --pri-back: #fff;
-    --sec-back: #f4f4f4;
+    --sec-back: #B6FFE0;
     --tri-back: #EAEAEA;
     --text: #333333;
     --text2: #000000;
-    --font-sans: 'Catamaran', sans-serif;
+    --font-sans: 'Lato', sans-serif;
     --font-weight: 500;
     --fz-xxs: 12px;
     --fz-xs: 14px;
@@ -157,7 +157,7 @@ const GlobalStyle = createGlobalStyle`
     --tab-height: 42px;
     --tab-width: 120px;
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
-    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition: all 0.12s cubic-bezier(0.645, 0.045, 0.355, 1);
     --hamburger-width: 30px;
     --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
     --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;

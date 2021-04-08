@@ -14,24 +14,28 @@ module.exports = {
 
 	navLinks: [
 		{
-			name: 'SAMPLE',
-			url: '/sample'
+			name: 'DIGITAL CONTENT',
+			url: 'digital'
 		},
 		{
-			name: 'SAMPLE',
-			url: '/sample'
+			name: 'SEO',
+			url: '/services'
 		},
 		{
-			name: 'SAMPLE',
-			url: '/sample'
+			name: 'E-COMMERCE',
+			url: '/portfolio'
 		},
 		{
-			name: 'SAMPLE',
-			url: '/sample'
+			name: 'WEB DESIGN',
+			url: '/contact'
 		},
 		{
-			name: 'SAMPLE',
-			url: '/sample'
+			name: 'PORTFOLIO',
+			url: '/portfolio'
+		},
+		{
+			name: 'WORK WITH ME',
+			url: '/contact'
 		}
 	],
 
@@ -43,7 +47,7 @@ module.exports = {
 		rotate: { x: 0, y: 0, z: 0 },
 		opacity: 0,
 		scale: 1,
-		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		easing: 'cubic-bezier(0.945, 0.045, 0.355, 1)',
 		mobile: true,
 		reset: false,
 		useDelay: 'always',

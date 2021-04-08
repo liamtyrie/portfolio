@@ -7,14 +7,14 @@ import useOnClickOutside from '../utils/onClickOutside'
 
 const StyledMenu = styled.div`
 	display: none;
-	@media (max-width: 768px) {
+	@media (max-width: 1040px) {
 		display: block;
 	}
 `
 
 const StyledHamburgerButton = styled.button`
 	display: none;
-	@media (max-width: 768px) {
+	@media (max-width: 1040px) {
 		display: flex;
 		justify-content: center;
 		align-tiems: center;
@@ -86,7 +86,7 @@ const StyledHamburgerButton = styled.button`
 `
 const StyledSidebar = styled.aside`
 	display: none;
-	@media (max-width: 768px) {
+	@media (max-width: 1040px) {
 		display: flex;
 		justify-content: center;
 		align-items: center;

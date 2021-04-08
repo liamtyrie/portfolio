@@ -25,7 +25,7 @@ const StyledHeader = styled.header`
 	filter: none !important;
 	pointer-events: auto !important;
 	user-select: auto !important;
-	backdrop-filter: blue(2px);
+	backdrop-filter: blur(2px);
 	transition: var(--transition);
 
 	${(props) =>
@@ -35,7 +35,7 @@ const StyledHeader = styled.header`
 			height: var(--nav-scroll-height);
 			transform: translateY(0px);
 			background-color: transparent;
-			box-shadow: 0 10px 30px -10px var(--pri-back);
+			box-shadow: 0 10px 30px -10px gray;
 		`}
 
 	${(props) =>
@@ -44,7 +44,7 @@ const StyledHeader = styled.header`
 		css`
 			height: var(--nav-scroll-height);
 			transform: translateY(calc(var(--nav-scroll-height) * -1));
-			box-shadow: 0 10px 30px -10px var(--pri-back);
+			box-shadow: 0 10px 30px -10px black;
 		`};
 	@media (max-width: 1080px) {
 		padding: 0 40px;
@@ -91,13 +91,22 @@ const StyledNav = styled.nav`
 			}
 		}
 	}
+
+	.title {
+		font-size: var(--fz-xs);
+		padding-top: 5px;
+
+		@media (max-width: 1000px) {
+			font-size: var(--fz-xxs);
+		}
+	}
 `
 
 const StyledLinks = styled.div`
 	display: flex;
 	align-items: center;
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1040px) {
 		display: none;
 	}
 	ol {
@@ -113,6 +122,7 @@ const StyledLinks = styled.div`
 			position: relative;
 			font-size: var(--fz-xxs);
 			font-weight: 400;
+
 			a {
 				padding: 30px;
 				&:before {
@@ -122,6 +132,26 @@ const StyledLinks = styled.div`
 					text-align: center;
 				}
 			}
+		}
+	}
+
+	.button {
+		height: 40px;
+
+		padding-top: -60px;
+		background-color: var(--sec-back);
+	}
+
+	polygon {
+		background-color: transparent;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-style: none;
+		:hover {
+			border-style: dotted;
+			border-color: var(--sec-back);
+			border-width: 2px;
+			transition: all 2s cubic-bezier(0.345, 0.387, 0.308, 1);
 		}
 	}
 `
@@ -166,16 +196,7 @@ const Nav = ({ isHome }) => {
 							) : (
 								<Link to='/' aria-label='home' style={{ display: 'flex' }}>
 									<img src={logo} alt=' ' className='logo' />
-									<div
-										style={{
-											marginTop: '5px',
-											letterSpacing: '-0.5px',
-											fontSize: 'var(--fz-md)',
-											fontWeight: 'var(--font-weight)'
-										}}
-									>
-										LIAM TYRIE | SOFTWARE DEVELOPER
-									</div>
+									<div className='title'>LIAM TYRIE | DIGITAL DESIGN</div>
 								</Link>
 							)}
 						</CSSTransition>
@@ -197,7 +218,9 @@ const Nav = ({ isHome }) => {
 											key={i}
 											style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}
 										>
-											<Link to={url}>{name}</Link>
+											<polygon className='polygon-link'>
+												<Link to={url}>{name}</Link>
+											</polygon>
 										</li>
 									</CSSTransition>
 								))}
