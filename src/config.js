@@ -1,17 +1,6 @@
 module.exports = {
 	email: 'liam@liamtyrie.com',
 
-	socialMedia: [
-		{
-			name: 'Facebook',
-			url: 'https://www.facebook.com/liamtyriedesign'
-		},
-		{
-			name: 'Instragram',
-			url: 'https://www.instagram.com/liamtyriedesign'
-		}
-	],
-
 	navLinks: [
 		{
 			name: 'DIGITAL CONTENT',

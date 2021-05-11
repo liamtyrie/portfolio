@@ -34,7 +34,7 @@ const StyledHeader = styled.header`
 		css`
 			height: var(--nav-scroll-height);
 			transform: translateY(0px);
-			background-color: transparent;
+			background-color: rgba(255, 255, 255, 0.8);
 			box-shadow: 0 10px 30px -10px gray;
 		`}
 
@@ -46,6 +46,11 @@ const StyledHeader = styled.header`
 			transform: translateY(calc(var(--nav-scroll-height) * -1));
 			box-shadow: 0 10px 30px -10px black;
 		`};
+	@media (max-width: 1920px) {
+		padding-left: 0px;
+		margin-left: -4px;
+		padding-right: 20px;
+	}
 	@media (max-width: 1080px) {
 		padding: 0 40px;
 	}
@@ -91,10 +96,21 @@ const StyledNav = styled.nav`
 			}
 		}
 	}
+	@media (max-width: 1920px) {
+		padding: 0 40px;
+	}
+	@media (max-width: 1080px) {
+		padding: 0 40px;
+	}
+	@media (max-width: 768px) {
+		padding: 0 25px;
+	}
 
 	.title {
 		font-size: var(--fz-xs);
+		font-weight: 500;
 		padding-top: 5px;
+		text-shadow: 0.4px 1px 1px gray;
 
 		@media (max-width: 1000px) {
 			font-size: var(--fz-xxs);
@@ -117,14 +133,19 @@ const StyledLinks = styled.div`
 		margin: 0;
 		list-style: none;
 
+		@media (max-width: 1920px) {
+			margin-right: 5vw;
+		}
+
 		li {
 			margin: 0 5px;
 			position: relative;
 			font-size: var(--fz-xxs);
 			font-weight: 400;
+			text-shadow: 0.4px 1px 2px gray;
 
 			a {
-				padding: 30px;
+				padding: 20px;
 				&:before {
 					margin-right: 5px;
 					color: var(--text);
@@ -178,6 +199,10 @@ const Nav = ({ isHome }) => {
 		}
 	}, [])
 
+	const moveUp = (e) => {
+		window.scrollBy({ top: -5000, behavior: 'smooth' })
+	}
+
 	const timeout = isHome ? loaderDelay : 0
 	const fadeClass = isHome ? 'fade' : ''
 	const fadeDownClass = isHome ? 'fadedown' : ''
@@ -194,7 +219,12 @@ const Nav = ({ isHome }) => {
 							{isHome ? (
 								<img src={logo} alt=' ' className='logo' />
 							) : (
-								<Link to='/' aria-label='home' style={{ display: 'flex' }}>
+								<Link
+									to='/'
+									aria-label='home'
+									style={{ display: 'flex' }}
+									onClick={moveUp}
+								>
 									<img src={logo} alt=' ' className='logo' />
 									<div className='title'>LIAM TYRIE | DIGITAL DESIGN</div>
 								</Link>

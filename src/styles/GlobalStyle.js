@@ -293,7 +293,6 @@ a {
     cursor: pointer;
     &:hover,
     &:focus {
-      color: var(--text2);
     }
     &.inline-link {
       		display: inline-block;
@@ -306,13 +305,11 @@ a {
 		&:hover,
 		&:focus,
 		&:active {
-			color: var(--text2);
 			outline: 0;
 			&:after {
 				width: 100%;
 			}
 			& > * {
-				color: var(--text2) !important;
 				transition: var(--transition);
 			}
 		}
@@ -441,13 +438,11 @@ a {
           &:hover,
           &:focus,
           &:active {
-              color: var(--text2);
               outline: 0;
               &:after {
                   width: 100%;
               }
               & > * {
-                  color: var(--text2) !important;
                   transition: var(--transition);
               }
           }
@@ -482,11 +477,9 @@ a {
           position: relative;
           transition: var(--transition);
           cursor: pointer;
-          color: var(--text);
           &:hover,
           &:focus,
           &:active {
-              color: var(--text2);
               outline: 0;
               &:after {
                   width: 100%;
